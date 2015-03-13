@@ -1,0 +1,5 @@
+﻿asp.net MVC框架下，
+Controller由ControllerFactory创建、激活。
+在实际应用中，一个Controller可能对应着一个Service以实现业务逻辑，
+我们可以自定义ControllerFactory，以实现Service的IoC注入，
+解耦各层之间的依赖
