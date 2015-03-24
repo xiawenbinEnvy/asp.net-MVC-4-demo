@@ -1,0 +1,7 @@
+﻿我们曾经在online站点上遇到过 decimal 的显示方式不一致的情况：
+有些地方使用向上取整有些地方使用向下取整，
+在MVC的框架中，数据类型的显示方式是利用ModelMetadata配合类型的模板来完成。
+所以我们可以在Views/Shared/DisplayTemplates下，给Decimal定义一个显示模板，
+这个自定义模板会覆盖框架内部的Decimal的原先的模板，
+这样的话，站点内所有以Html.DisplayFor方式展示的价格，就都会统一起来，
+不需要手工一个个转换。

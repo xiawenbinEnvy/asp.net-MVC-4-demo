@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <a href="javascript:void(0);" id="changeBtn">发送ajax请求</a> 
+    </div>
+
+    <div id="hotelRoomBox1"></div>
+    <div id="hotelRoomBox2"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#changeBtn').click(function () {
+                $.ajax({
+                    type: 'Get',
+                    url: 'Home/Ajax',
+                    data: {
+                        star: 5,
+                        price: 2500,
+                        type: 'FG',
+                        rooms:6
+                    },
+                    success: function (result) {
+                        $("#hotelRoomBox1").html(result);
+                    }
+                });
+                $.ajax({
+                    type: 'Get',
+                    url: 'Home/Ajax',
+                    data: {
+                        star: 4,
+                        price: 700,
+                        type: 'PP',
+                        rooms: 1
+                    },
+                    success: function (result) {
+                        $("#hotelRoomBox2").html(result);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

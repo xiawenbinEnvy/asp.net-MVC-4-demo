@@ -1,0 +1,12 @@
+﻿MVC有一个很重要的功能是“数据绑定”，他可以自动将客户端传过来的数据绑定到Action的参数上，
+框架提供的这个功能的好处是抛弃了WebForm里面那种手工从Request.QueryString、Request.Form里提取数据的丑陋的方式。
+
+数据绑定功能由两类组件互相协作来完成：IValueProvider和IModelBinder。
+
+IValueProvider的作用是从Form、QueryString、Route里提取数据，
+IModelBinder的作用是将通过IValueProvider准备好的数据，以反射的方式，放入Action的参数上面去。
+
+因为MVC框架里，默认注册的ValueProvider的顺序是Form——Route——QueryString，
+也就是说如果route、queryString、form里，都有叫同一个key的参数的话，默认会使用Form里的那个value，
+而如果我们有一个需求，想要优先选择route里的那个值的话（默认是不可能被选中的），
+就可以自定义一个ValueProvider，把逻辑实现在里面。

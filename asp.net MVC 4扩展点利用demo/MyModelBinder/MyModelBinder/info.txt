@@ -1,0 +1,4 @@
+﻿MVC框架默认的ModelBinder机制，是从Form、Route、QueryString等渠道内获取数据进行绑定，
+如果我们要进行扩展，比如从cache、session、cookies内获取数据，
+就可以自定义ModelBinder、然后将其和Action参数关联起来即可，
+而不必每次在Action方法内手工获取

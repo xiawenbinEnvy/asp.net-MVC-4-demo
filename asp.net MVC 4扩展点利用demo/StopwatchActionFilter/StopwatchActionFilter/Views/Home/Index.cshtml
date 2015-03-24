@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<text>Action "<text>
+    @this.Request.RequestContext.RouteData.GetRequiredString("action") <text>"
+    耗时：
+    </text> 
+    @this.Request.RequestContext.RouteData.DataTokens["time"]
